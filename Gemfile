@@ -20,6 +20,7 @@ gem 'shotgun'
 gem 'faker'
 
 gem 'byebug'
+gem 'twilio-ruby'
 
 group :test do
   gem 'faker'
