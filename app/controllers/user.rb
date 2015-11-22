@@ -21,6 +21,7 @@ end
 # display a specific user
 get '/users/:id' do
   @user = current_user
+  @friends = @user.friends
   erb :'users/show_user'
 end
 

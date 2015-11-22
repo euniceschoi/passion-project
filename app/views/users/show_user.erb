@@ -15,7 +15,10 @@
   </form>
 
   <h2>T3XT Y0 FR13ND$</h2>
-
-
+  <ul>
+  <% @friends.each do |friend| %>
+    <li><a href=""><%= friend.first_name%> <%= friend.last_name %></a></li>
+  <% end %>
+  </ul>
 
 </div>

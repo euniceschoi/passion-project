@@ -1,8 +1,7 @@
 # require 'bcrypt'
 class User < ActiveRecord::Base
   has_many :messages
-  has_many :friendships
-  has_many :friends, :through => :friendships, source: :user
+  has_many :friends
 
   validates :first_name, :last_name, :email, :username, :phone_number, :password_hash, presence: true
 
