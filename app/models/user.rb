@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   has_many :friendships
   has_many :friends, :through => :friendships, source: :user
 
+  validates :first_name, :last_name, :email, :username, :phone_number, :password_hash, presence: true
+
   include BCrypt
 
   def password

@@ -26,20 +26,20 @@ end
 
 # return an HTML form for editing a user
 get '/users/:id/edit' do
-  @user = User.find(current_user.id)
   erb :'users/edit_form'
 end
 
 # update a specific user
 put '/users/:id' do
 
-  user_id = current_user.id
-  @user.update()
+  @user = User.find(current_user.id)
+  @user.update(params[:user])
   redirect "/users/#{current_user.id}"
 end
 
 # delete a user
 delete '/users/:id' do
   current_user.destroy
+  redirect '/users'
 
 end

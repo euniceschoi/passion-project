@@ -7,3 +7,19 @@
 th {
   text-align: left;
 }
+
+body {
+  background-color:black;
+}
+
+.container {
+  background-color:white;
+}
+
+h1{
+  color:#00FFFF;
+}
+
+.button {
+  background-color: #6FFF00 ;
+}
