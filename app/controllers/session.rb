@@ -1,15 +1,17 @@
 #get_login_form
 get '/sessions/new' do
-  erb :_login, layout: false
+  redirect "/users/"
 end
 
 #post_form
 post '/sessions' do
-  p params
-  if request.xhr?
-    session[:id] = User.authenticate(params)
-    erb :_header, layout: false
-  end
+  @user = User.find_by_email(params[:email])
+    if @user && @user.password_hash == params[:password]
+      session[:id] = @user.id
+      redirect "/users/#{@user.id}"
+    else
+      redirect "/users"
+    end
 end
 
 #delete session
