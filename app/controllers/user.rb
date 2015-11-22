@@ -13,14 +13,14 @@ end
 post '/users' do
 
   @user = User.new(params[:user])
-  @user.password = params[:password]
+  @user.password = params[:user][:password]
   @user.save!
   redirect '/users'
 end
 
 # display a specific user
 get '/users/:id' do
-  "HELLO"
+  @user = current_user
   erb :'users/show_user'
 end
 
