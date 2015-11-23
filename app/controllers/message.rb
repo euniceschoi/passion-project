@@ -8,11 +8,10 @@ end
 
 #create a new message
 post '/messages' do
-
-  account_sid = "AC62876955ac4c07b2eb179831371601bb"
-  auth_token = "f9fbd7fa9313762c70d39f26a6a49dd3"
   client = Twilio::REST::Client.new account_sid, auth_token
 
+  account_sid = ENV['ACCOUNT_TWILIO_SID']
+  auth_token = ENV['AUTH_TWILIO_TOKEN']
 
   # from = "+14156504015" # Your Twilio number
 
