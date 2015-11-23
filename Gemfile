@@ -21,6 +21,7 @@ gem 'faker'
 
 gem 'byebug'
 gem 'twilio-ruby'
+gem 'dotenv'
 
 group :test do
   gem 'faker'

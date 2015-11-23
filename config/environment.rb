@@ -18,6 +18,8 @@ require 'active_record'
 require 'logger'
 require 'bcrypt'
 require 'twilio-ruby'
+require 'dotenv'
+Dotenv.load
 
 require 'sinatra'
 require "sinatra/reloader" if development?
