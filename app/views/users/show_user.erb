@@ -14,16 +14,20 @@
     <input type="submit" value="D31373!!"></input>
   </form>
 
+  <form action="/friends/new" method="get">
+    <input type="submit" value="4DD FR13ND"></input>
+  </form>
+
   <h2>T3XT Y0 FR13ND$</h2>
 
-  <form action="/messages" method="post">
+  <form id="leet_speak_translator" action="/messages" method="post">
       <select name='phone_number'>
       <option value="" disabled="disabled" selected="selected">S3L3CT 4 FR13ND</option>
       <% @friends.each do |friend| %>
       <option value="<%= friend.phone_number%>"><%= friend.first_name %></option>
       <%end  %>
     </select>
-    <input type="text"></input>
+    <input id="message_content" type="text" name="content"></input>
     <input type="submit" value="S3ND M3$$4G3"></input>
   </form>
 

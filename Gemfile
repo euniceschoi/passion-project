@@ -22,7 +22,7 @@ gem 'faker'
 gem 'byebug'
 gem 'twilio-ruby'
 gem 'dotenv'
-
+gem 'unirest'
 group :test do
   gem 'faker'
   gem 'rspec'
