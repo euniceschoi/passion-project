@@ -4,10 +4,15 @@ end
 
 # return an HTML form for creating a new friend
 get '/friends/new' do
+  erb :'/friends/new_friend_form'
 end
 
 #create a new friend
 post '/friends' do
+  # raise params.inspect
+  @friend = Friend.new(params[:friend])
+  @friend.save
+  redirect "/users/#{current_user.id}"
 end
 
 # display a specific friend

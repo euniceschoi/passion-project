@@ -1,4 +1,17 @@
 enable :sessions
+
+before '/users/:id' do
+  unless current_user.id == params[:id].to_i
+    redirect '/users'
+  end
+end
+
+before '/users/:id/edit' do
+  unless current_user.id == params[:id].to_i
+    redirect '/users'
+  end
+end
+
 # display all users
 get '/users' do
   erb :'users/index'

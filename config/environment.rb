@@ -19,6 +19,7 @@ require 'logger'
 require 'bcrypt'
 require 'twilio-ruby'
 require 'dotenv'
+require 'unirest'
 Dotenv.load
 
 require 'sinatra'
