@@ -16,19 +16,27 @@ end
 #create a new message
 post '/messages' do
 
-  input = params[:content]
-  # .gsub! /\s+/, '+'
+  p params
+
+  input = params[:content].gsub! /\s+/, '+'
   leetspeak_key = ENV['LEET_SPEAK_KEY']
+  p leetspeak_key
   p "*" * 45
   p input
   p "*" * 45
 
-  text_response = Unirest.get "https://montanaflynn-l33t-sp34k.p.mashape.com/encode?text=#{input}",
-    headers:{
-      "X-Mashape-Key" => leetspeak_key,
-      "Accept" => "text/plain"
-    }
+  text_response = Unirest.get "https://yoda.p.mashape.com/yoda?sentence=#{input}",
+  headers:{
+    "X-Mashape-Key" => "535Kv3NoycmshrXEcmUOb9gLXGbop1XfAygjsn35Sc5VY5eWI4",
+    "Accept" => "text/plain"
+  }
+  # text_response = Unirest.post "https://montanaflynn-l33t-sp34k.p.mashape.com/encode?text=#{input}",
+  #   headers:{
+  #     "X-Mashape-Key" => leetspeak_key,
+  #     "Accept" => "text/plain"
+  #   }
     p "*" * 10
+    # p text_response
     p text_response.body
       p "*" * 10
 
@@ -52,6 +60,7 @@ post '/messages' do
       :body => @text_message,
     })
     # puts "Sent message to Chris"
+  # return @text_message, layout: false
   redirect "/users/#{current_user.id}"
 end
 
