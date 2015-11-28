@@ -35,6 +35,7 @@ end
 get '/users/:id' do
   @user = current_user
   @friends = @user.friends
+  @messages = @user.messages
   erb :'users/show_user'
 end
 

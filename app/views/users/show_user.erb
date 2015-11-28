@@ -1,36 +1,50 @@
 <div class="container">
-  <h1>W4$$$APPPPP, <%= current_user.first_name %></h1>
+  <h1>Hello, <%= current_user.first_name %></h1>
 
   <form action="/sessions/<%= current_user.id %>" method="post">
     <input type="hidden" name="_method" value="delete"></input>
-    <input type="submit" value="10g 0u7"></input>
+    <input type="submit" value="Log Out"></input>
   </form>
   <form action="/users/<%= current_user.id %>/edit" method="get">
-    <input type="submit" value="3D1T"></input>
+    <input type="submit" value="Edit"></input>
   </form>
 
    <form action="/users/<%= current_user.id %>" method="post">
     <input type="hidden" name="_method" value="delete"></input>
-    <input type="submit" value="D31373!!"></input>
+    <input type="submit" value="Delete"></input>
   </form>
 
   <form action="/friends/new" method="get">
-    <input type="submit" value="4DD FR13ND"></input>
+    <input type="submit" value="Add Friend"></input>
   </form>
 
-  <h2>T3XT Y0 FR13ND$</h2>
+  <h1>Friend, You Shall Choose</h1>
 
-  <form id="leet_speak_translator" action="/messages" method="post">
+  <form id="yoda_translator" action="/messages" method="post">
       <select name='phone_number'>
-      <option value="" disabled="disabled" selected="selected">S3L3CT 4 FR13ND</option>
+      <option value="" disabled="disabled" selected="selected">Friend, You Shall Select</option>
       <% @friends.each do |friend| %>
       <option id='phone_number' value="<%= friend.phone_number%>"><%= friend.first_name %></option>
       <%end  %>
     </select>
     <input id="message_content" type="text" name="content"></input>
-    <input type="submit" value="S3ND M3$$4G3"></input>
+    <input type="submit" value="Send Message"></input>
   </form>
 
+  <hr>
+
+  <h2>Messages, hmmm..</h2>
+
+  <div class="messages-container">
+    <ul>
+      <%@messages.each do |message|  %>
+        <h4>"<%= message.content %>"</h4>
+              -Sent at:<%= message.created_at %> </li>
+        <hr>
+      <%end %>
+    </ul>
+
+  </div>
 
 
 </div>
