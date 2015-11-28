@@ -24,7 +24,7 @@
       <select name='phone_number'>
       <option value="" disabled="disabled" selected="selected">S3L3CT 4 FR13ND</option>
       <% @friends.each do |friend| %>
-      <option value="<%= friend.phone_number%>"><%= friend.first_name %></option>
+      <option id='phone_number' value="<%= friend.phone_number%>"><%= friend.first_name %></option>
       <%end  %>
     </select>
     <input id="message_content" type="text" name="content"></input>

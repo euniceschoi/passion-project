@@ -1,28 +1,29 @@
 $(document).ready(function() {
-
+  yodaSpeakHandler();
 });
 
 
-// var leetSpeakHandler = function(){
-//   $("#leet_speak_translator").on("submit", function(event) {
-//     event.preventDefault();
-//     console.log("YES!!");
-//     var rawMessage = $("#message_content").val();
-//     var request = $.ajax({
-//       url: '/messages',
-//       method: "POST",
-//       data: {content: rawMessage}
-//     });
-//     request.done(function(message) {
-//       console.log(message);
-//       console.log("Here")
-//     })
-//     request.fail(function(message){
-//       console.log("FUCK");
-//       console.log(message);
-//     })
-//   })
-// }
+var yodaSpeakHandler = function(){
+  $("#leet_speak_translator").on("submit", function(event) {
+    event.preventDefault();
+    console.log("YES!!");
+    debugger
+    var message = $(this).serialize();
+    var request = $.ajax({
+      url: '/messages',
+      method: "POST",
+      data: message
+    });
+    request.done(function(message) {
+      console.log(message);
+      console.log("Here")
+    })
+    request.fail(function(message){
+      console.log("FUCK");
+      console.log(message);
+    })
+  })
+}
 
 
 

@@ -60,8 +60,8 @@ post '/messages' do
       :body => @text_message,
     })
     # puts "Sent message to Chris"
-  # return @text_message, layout: false
-  redirect "/users/#{current_user.id}"
+  return @text_message
+  # redirect "/users/#{current_user.id}"
 end
 
 # display a specific message
