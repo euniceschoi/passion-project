@@ -1,6 +1,6 @@
 .container {
   margin: 20px auto;
-  width: 600px;
+  width: 800px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
 }
@@ -9,7 +9,7 @@ th {
 }
 
 body {
-  background-color:black;
+  background-color:#66CC66;
 }
 
 .container {
@@ -17,9 +17,22 @@ body {
 }
 
 h1{
-  color:#00FFFF;
+  color:#6699FF;
+  text-align:center;
 }
 
 .button {
   background-color: #6FFF00 ;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto ;
+}
+
+form{
+    margin-left: 25%;
+    margin-right:25%;
+    width: 100%;
 }
