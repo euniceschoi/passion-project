@@ -20,9 +20,9 @@
 
   <h1>Friend, You Shall Choose</h1>
 
-  <form id="leet_speak_translator" action="/messages" method="post">
+  <form id="yoda_translator" action="/messages" method="post">
       <select name='phone_number'>
-      <option value="" disabled="disabled" selected="selected">S3L3CT 4 FR13ND</option>
+      <option value="" disabled="disabled" selected="selected">Friend, You Shall Select</option>
       <% @friends.each do |friend| %>
       <option id='phone_number' value="<%= friend.phone_number%>"><%= friend.first_name %></option>
       <%end  %>
@@ -31,6 +31,20 @@
     <input type="submit" value="Send Message"></input>
   </form>
 
+  <hr>
+
+  <h2>Messages, hmmm..</h2>
+
+  <div class="messages-container">
+    <ul>
+      <%@messages.each do |message|  %>
+        <h4>"<%= message.content %>"</h4>
+              -Sent at:<%= message.created_at %> </li>
+        <hr>
+      <%end %>
+    </ul>
+
+  </div>
 
 
 </div>

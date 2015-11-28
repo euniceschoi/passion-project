@@ -4,19 +4,22 @@ $(document).ready(function() {
 
 
 var yodaSpeakHandler = function(){
-  $("#leet_speak_translator").on("submit", function(event) {
+  $("body").on("submit", "#yoda_translator", function(event) {
     event.preventDefault();
     console.log("YES!!");
-    debugger
+
     var message = $(this).serialize();
+    var that = $(this);
     var request = $.ajax({
       url: '/messages',
       method: "POST",
       data: message
     });
     request.done(function(message) {
-      console.log(message);
-      console.log("Here")
+      // console.log(message);
+      // console.log("Here");
+
+      $(".messages-container ul").append(message);
     })
     request.fail(function(message){
       console.log("FUCK");
